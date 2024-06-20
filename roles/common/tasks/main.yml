@@ -10,6 +10,7 @@
   firewalld:
     zone: public
     port: 80/tcp
-    permanent: true
+    permanent: yes
     state: enabled
+    immediate: yes
 
