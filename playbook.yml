@@ -1,0 +1,7 @@
+---
+- name: Playbook inastall webserver
+  hosts: webservers
+  become: yes
+  roles:
+    - common
+    - web_nginx

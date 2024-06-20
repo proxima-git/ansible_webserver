@@ -1,0 +1,7 @@
+---
+# handlers file for web_nginx
+
+- name: Reload nginx
+  service:
+    name: nginx
+    state: reloaded
