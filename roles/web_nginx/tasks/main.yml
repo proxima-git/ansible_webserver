@@ -13,6 +13,7 @@
     name: nginx
     state: started
     enabled: yes
+  ignore_errors: yes
 
 - name: Copy nginx config file
   copy:
@@ -33,10 +34,11 @@
 - name: Copy sites config file
   template:
     src: etc/nginx/conf.d/webproxima.ru.conf.j2
-    dest: /etc/nginx/conf.d/webproxima.ru.conf
+    dest: "/etc/nginx/conf.d/{{ item.name }}.conf"
     owner: root
     group: root
     mode: 0644
+  with_items: "{{ webserver_content }}"
   notify: Reload nginx
 
 
