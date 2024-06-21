@@ -12,4 +12,11 @@
     state: started
     enabled: yes
 
+- name: Clone git repository with site
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.root }}"
+    force: yes
+  with_items: "{{ webserver_content }}"
+
 

@@ -3,7 +3,8 @@ ansible_user: proxima
 ansible_ssh_private_key_file: /home/proxima/.ssh/ansible
 
 webserver_content:
-  - name: web_proxima
-    root: /usr/share/nginx/web_proxima
+  - name: webproxima.ru
+    root: /usr/share/nginx/webproxima.ru
+    repo: https://github.com/proxima-git/template_site.git
 
 
